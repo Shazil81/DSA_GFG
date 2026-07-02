@@ -1,11 +1,18 @@
 class Solution:
-    def reverseStack(self, st):
-        # code here
-        temp = []
-    
-        while st:
-            temp.append(st.pop())   # ye ek hi reversal hai — ab temp reversed hai
+    def insertAtBottom(self, st, item):
+        # agar stack empty hai, to item ko yahin daal do (ye bottom ban jayega)
+        if not st:
+            st.append(item)
+            return
         
-        st.extend(temp)   # bas seedha copy kar do, dobara pop-push mat karo
+        # warna top nikaalo, baaki recursively neeche daalo, phir top wapas rakho
+        top = st.pop()
+        self.insertAtBottom(st, item)
+        st.append(top)
+    def reverseStack(self, st):
+        if st:
+            top = st.pop()               # top nikaalo
+            self.reverseStack(st)         # baaki stack ko reverse karo
+            self.insertAtBottom(st, top)  # nikaale hue element ko bottom mein daalo
         
         return st
