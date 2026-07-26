@@ -6,27 +6,21 @@ class Node:
         self.right = None
         self.left = None 
 '''
-from collections import deque
 class Solution:
     def leftView(self, root):
-        if not root:
-            return []
-        
-        queue = deque([root])
+        # dfs se krte hain
         res = []
-        while queue:
-            lvl_size = len(queue)
-            for i in range(lvl_size):
-                e = queue.popleft()
-                if i == 0:
-                    res.append(e.data)
-                
-                if e.left:
-                    queue.append(e.left)
-                
-                if e.right:
-                    queue.append(e.right)
-        
+        def dfs(node, lvl):
+            if not node:
+                return []
+            
+            if lvl == len(res):
+                res.append(node.data)
+            
+            dfs(node.left, lvl+1)
+            dfs(node.right, lvl+1)
+            
+        dfs(root, 0)
         return res
                     
             
