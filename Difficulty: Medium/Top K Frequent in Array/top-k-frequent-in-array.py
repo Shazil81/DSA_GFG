@@ -1,24 +1,22 @@
+import heapq
 class Solution:
-	def topKFreq(self, nums, k):
-		# Hashmap + sorting : Not Optimal
-        # n = len(arr) - Agar chahiye toh use kar sakte ho
+	def topKFreq(self, arr, k):
+		# heap se kr rhe h
+        n = len(arr)
+        heap = []
+        
         freq = {}
-        for num in nums:
+        for num in arr:
             freq[num] = freq.get(num, 0) + 1
-            
-        # Tu jo bol raha hai uske hisaab se:
-        # freq.items() -> (number, frequency)
-        # key=lambda x: (x[1], x[0]) -> (frequency, number)
-        # reverse=True -> dono descending order me honge
+        # max heap bnana hai
+        for key, value in freq.items():
+            heapq.heappush(heap, (-value, -key))
         
-        sorted_items = sorted(freq.items(), key=lambda x: (x[1], x[0]), reverse=True)
-        
-        result = []
+        res = []
         for i in range(k):
-            result.append(sorted_items[i][0]) 
-                
-        # Agar tune reverse=True rakha hai, toh result already sorted hai.
-        # Upar wala code seedha return karega.
-        return result
+            freq, key = heapq.heappop(heap)
+            res.append(-key)
+        
+        return res
 		
 		
