@@ -1,0 +1,9 @@
+<h2><a href="https://www.geeksforgeeks.org/problems/product-of-digits4348/1">Check for Alternate Bits</a></h2><h3>Difficulty Level : Difficulty: Basic</h3><hr><div class="problems_problem_content__Xm_eO" style="--text-color: var(--problem-text-color);"><p><span id="docs-internal-guid-47a1a4ca-7fff-6bb6-855b-f246e1869a08" style="font-size: 14pt;"><span style="font-family: Arial, sans-serif; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">Given a non negative integer</span><span style="font-family: Arial, sans-serif; font-weight: bold; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;"> n</span><span style="font-family: Arial, sans-serif; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">, check whether its binary representation consists of alternating bits. </span></span></p>
+<p><span style="font-size: 18px;"><strong>Examples :</strong></span></p>
+<pre><span style="font-size: 18px;"><strong>Input</strong>: n = 12
+<strong>Output:</strong> false
+<span style="font-size: 14pt;"><strong>Explanation</strong>: n = 12 = "1100". </span></span><span style="font-size: 14pt;">Hence there is no alternate pattern.</span></pre>
+<pre><span style="font-size: 18px;"><strong>Input: </strong>n = 10
+<strong>Output:</strong> true
+<span style="font-size: 14pt;"><strong>Explanation</strong>: n = 10 = "1010". </span></span><span style="font-size: 14pt;">Hence n has an alternate pattern.</span></pre>
+<p><span style="font-size: 18px;"><strong>Constraints:</strong><br><span style="font-size: 18.6667px;">0 ≤ n ≤ 10<sup>9</sup></span></span></p></div><br><p><span style=font-size:18px><strong>Topic Tags : </strong><br><code>Bit Magic</code>&nbsp;
